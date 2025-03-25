@@ -200,5 +200,18 @@ function carregarHorarios() {
     });
 }
 
+document.getElementById("profile-picture").addEventListener("change", function(event) {
+  const file = event.target.files[0];
+
+  if (file) {
+      // Exibe o nome do arquivo, se necessário
+      document.getElementById("file-name").textContent = file.name;
+  } else {
+      // Se nenhum arquivo for escolhido, mantém o texto padrão
+      document.getElementById("file-name").textContent = 'Nenhum arquivo escolhido';
+  }
+});
+
+
 // Carrega os horários ao abrir a página
 carregarHorarios();
